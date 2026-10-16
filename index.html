@@ -1,0 +1,122 @@
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des étudiants UNCHK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-container">
+      <div>
+        <p class="subtitle-top">ESPACE ADMINISTRATION</p>
+        <h1>Gestion des étudiants UNCHK</h1>
+        <p class="subtitle-bottom">Gérez les inscriptions et suivez les résultats.</p>
+      </div>
+      <div class="header-icon">🎓</div>
+    </div>
+  </header>
+  
+
+  <div class="main-container">
+    <section class="stats-grid">
+      <div class="card stat-card">
+        <span class="stat-label">Total étudiants</span>
+        <!-- <span class="stat-value">1</span> -->
+         <span class="stat-value" id="stat-total">0</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-label">Moyenne générale</span>
+        <!-- <span class="stat-value">20,00/20</span> -->
+          <span class="stat-value" id="stat-moyenne">0,00/20</span>
+
+      </div>
+      <div class="card stat-card">
+        <span class="stat-label">Étudiants admis</span>
+        <!-- <span class="stat-value">1</span> -->
+         <span class="stat-value" id="stat-admis">0</span>
+      </div>
+    </section>
+
+    
+    <section class="card form-card">
+      <h2>Ajouter un étudiant</h2>
+       <p class="success-msg" id="mgs"></p>
+      <form class="form-grid" id="form">
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" id="nom" placeholder="Ex. : Diallo">
+        </div>
+        <div class="form-group">
+          <label>Prénom</label>
+          <input type="text" id="prenom" placeholder="Ex. : Awa">
+        </div>
+        <div class="form-group">
+          <label>Adresse e-mail</label>
+          <input type="email" id="email" placeholder="awa@example.com">
+        </div>
+        <div class="form-group">
+          <label>Classe</label>
+          <input type="text" id="classe" placeholder="Ex. : L1 Informatique">
+        </div>
+        <div class="form-group">
+          <label>Note sur 20</label>
+          <input type="text" id="note" placeholder="Ex. : 15.5">
+        </div>
+        <!-- <div class="form-group full-width">
+          <button type="submit" id="btn"class="btn-submit">Ajouter l'étudiant</button>
+          <p class="success-msg" id="mgs">Étudiant ajouté avec succès</p>
+        </div> -->
+        <div class="form-group full-width">
+            <p class="error-msg" id="erreur"></p>
+            <button type="submit" id="btn" class="btn-submit">Ajouter l'étudiant</button>
+        </div>
+      </form>
+    </section>
+
+    
+    <section class="card table-card">
+      <div class="table-header">
+        <div>
+          <h2>Liste des étudiants</h2>
+          <p class="table-subtitle">Consultez et gérez les inscriptions.</p>
+        </div>
+        <!-- <input type="text" placeholder="Rechercher un étudiant..." class="search-input"> -->
+         <input type="text" id="recherche" placeholder="Rechercher un étudiant..." class="search-input">
+      </div>
+
+      <div class="table-responsive">
+        <table >
+          <thead>
+            <tr>
+              <th>NOM COMPLET</th>
+              <th>E-MAIL</th>
+              <th>CLASSE</th>
+              <th>NOTE</th>
+              <th>RÉSULTAT</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- <tr>
+              <td>Elhadji Fall</td>
+              <td>fallalhadji@gmail.com</td>
+              <td>Licence 1</td>
+              <td>20/20</td>
+              <td><span class="badge badge-success">Admis</span></td>
+              <td>
+                <button class="btn-action btn-edit">Modifier</button>
+                <button class="btn-action btn-delete">Supprimer</button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  <script src="script.js"></script>https://meet.google.com/mxh-owkf-vsm
+
+
+</body>
+</html>
