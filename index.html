@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -17,32 +18,38 @@
       <div class="header-icon">🎓</div>
     </div>
   </header>
-  
 
   <div class="main-container">
+
+    <!-- Statistiques -->
     <section class="stats-grid">
       <div class="card stat-card">
         <span class="stat-label">Total étudiants</span>
-        <!-- <span class="stat-value">1</span> -->
-         <span class="stat-value" id="stat-total">0</span>
+        <span class="stat-value" id="stat-total">0</span>
       </div>
       <div class="card stat-card">
         <span class="stat-label">Moyenne générale</span>
-        <!-- <span class="stat-value">20,00/20</span> -->
-          <span class="stat-value" id="stat-moyenne">0,00/20</span>
-
+        <span class="stat-value" id="stat-moyenne">0,00/20</span>
       </div>
       <div class="card stat-card">
         <span class="stat-label">Étudiants admis</span>
-        <!-- <span class="stat-value">1</span> -->
-         <span class="stat-value" id="stat-admis">0</span>
+        <span class="stat-value" id="stat-admis">0</span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-label">Meilleur(e) étudiant(e)</span>
+        <span class="stat-value stat-value-nom" id="stat-meilleur">-</span>
+        <span class="stat-detail" id="stat-meilleur-note"></span>
+      </div>
+      <div class="card stat-card">
+        <span class="stat-label">Taux de réussite</span>
+        <span class="stat-value" id="stat-taux">0 %</span>
       </div>
     </section>
 
-    
+    <!-- Formulaire -->
     <section class="card form-card">
       <h2>Ajouter un étudiant</h2>
-       <p class="success-msg" id="mgs"></p>
+      <p class="success-msg" id="mgs"></p>
       <form class="form-grid" id="form">
         <div class="form-group">
           <label>Nom</label>
@@ -64,30 +71,41 @@
           <label>Note sur 20</label>
           <input type="text" id="note" placeholder="Ex. : 15.5">
         </div>
-        <!-- <div class="form-group full-width">
-          <button type="submit" id="btn"class="btn-submit">Ajouter l'étudiant</button>
-          <p class="success-msg" id="mgs">Étudiant ajouté avec succès</p>
-        </div> -->
         <div class="form-group full-width">
-            <p class="error-msg" id="erreur"></p>
-            <button type="submit" id="btn" class="btn-submit">Ajouter l'étudiant</button>
+          <p class="error-msg" id="erreur"></p>
+          <button type="submit" id="btn" class="btn-submit">Ajouter l'étudiant</button>
         </div>
       </form>
     </section>
 
-    
+    <!-- Liste -->
     <section class="card table-card">
       <div class="table-header">
         <div>
           <h2>Liste des étudiants</h2>
           <p class="table-subtitle">Consultez et gérez les inscriptions.</p>
         </div>
-        <!-- <input type="text" placeholder="Rechercher un étudiant..." class="search-input"> -->
-         <input type="text" id="recherche" placeholder="Rechercher un étudiant..." class="search-input">
+
+        <div class="filters">
+          <input type="text" id="recherche" placeholder="Rechercher un étudiant..." class="search-input">
+          <select id="filtre-classe" class="filter-select">
+            <option value="">Toutes les classes</option>
+          </select>
+          <select id="tri-classe" class="filter-select">
+            <option value="">Aucun tri</option>
+            <option value="asc">Classe A → Z</option>
+            <option value="desc">Classe Z → A</option>
+          </select>
+
+          <!-- Export / Import CSV -->
+          <button type="button" id="btn-export" class="btn-action btn-edit">Exporter CSV</button>
+          <button type="button" id="btn-import" class="btn-action btn-edit">Importer CSV</button>
+          <input type="file" id="fichier-csv" accept=".csv" style="display:none;">
+        </div>
       </div>
 
       <div class="table-responsive">
-        <table >
+        <table>
           <thead>
             <tr>
               <th>NOM COMPLET</th>
@@ -98,25 +116,12 @@
               <th>ACTIONS</th>
             </tr>
           </thead>
-          <tbody id="table-body">
-            <!-- <tr>
-              <td>Elhadji Fall</td>
-              <td>fallalhadji@gmail.com</td>
-              <td>Licence 1</td>
-              <td>20/20</td>
-              <td><span class="badge badge-success">Admis</span></td>
-              <td>
-                <button class="btn-action btn-edit">Modifier</button>
-                <button class="btn-action btn-delete">Supprimer</button>
-              </td>
-            </tr> -->
-          </tbody>
+          <tbody id="table-body"></tbody>
         </table>
       </div>
     </section>
   </div>
-  <script src="script.js"></script>https://meet.google.com/mxh-owkf-vsm
 
-
+  <script src="script.js"></script>
 </body>
 </html>
